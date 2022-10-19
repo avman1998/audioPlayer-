@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Player</title>
+    <script
+      src="https://kit.fontawesome.com/2051b3199e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              bgColor: "#F9F2ED   ",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="flex flex-col justify-center items-center min-h-[100vh]"
+    style="font-family: 'Alegreya Sans', sans-serif; background-color: #b9e2e5"
+  >
+    <h1 class="font-semibold mb-[20px]">Music Player by Aman</h1>
+    <div
+      class="border-2 border-white rounded-xl flex flex-col py-[15px] px-[50px] mx-[10px] gap-[20px] items-center justify-center bg-bgColor drop-shadow-sm"
+    >
+      <p id="songName" class="flex flex-wrap text-grey-900 font-semibold"></p>
+      <img
+        id="songImg"
+        src=""
+        alt=""
+        width="200px"
+        height="200px"
+        class="rounded-full"
+      />
+
+      <div
+        class="flex flex-col justify-content items-center gap-[10px] text-grey-900"
+      >
+        <div class="flex justify-content items-center gap-[30px]">
+          <button id="prev"><i class="fa-solid fa-backward"></i></button>
+          <button id="play"><i class="fa-solid fa-play"></i></button>
+          <!-- <button id="pause"><i class="fa-solid fa-pause"></i></button> -->
+          <button id="next"><i class="fa-solid fa-forward"></i></button>
+        </div>
+        <label for="volIcon">Volume</label>
+        <input
+          type="range"
+          min="00"
+          max="10"
+          value="10"
+          id="volIcon"
+          class="bg-black"
+        />
+      </div>
+    </div>
+    <audio id="song" src="./Kesariya(PagalWorld.com.se).mp3"></audio>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
