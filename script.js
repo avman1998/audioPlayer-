@@ -46,10 +46,10 @@ const songs = [
   //   "./Kaise Hua - Kabir Singh.mp3",
 ];
 let i = 1;
-j = 1;
-audioEle.src = songs[0].link;
-songNameEle.innerHTML = `${songs[0].name}`;
-songImgEle.src = songs[0].img;
+(j = 1), (randomNo = Math.trunc(Math.random() * songs.length));
+audioEle.src = songs[randomNo].link;
+songNameEle.innerHTML = `${songs[randomNo].name}`;
+songImgEle.src = songs[randomNo].img;
 
 playbtn.addEventListener("click", function () {
   if (status2 == "pause") {
