@@ -67,6 +67,30 @@ playbtn.addEventListener("click", function () {
 // pausebtn.addEventListener("click", function () {});
 
 // volume- 0.0 to 1.0
+audioEle.addEventListener("ended", function () {
+  if (status2 == "pause") {
+    audioEle.play();
+    playbtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    status2 = "play";
+  }
+  index = songs.indexOf(audioEle.src) + i;
+  index = index + 1;
+  if (index == songs.length) index = 0;
+
+  if (i == songs.length) i = 0;
+
+  audioEle.src = songs[index].link;
+  console.log(index);
+  console.log(audioEle.src);
+
+  audioEle.play();
+
+  if (i < songs.length) i++;
+  console.log(i);
+  songNameEle.innerHTML = songs[index].name;
+  songImgEle.src = songs[index].img;
+  singerNameEle.src = songs[index].singer;
+});
 volume.addEventListener("input", function () {
   audioEle.volume = volume.value / 10;
 });
